@@ -15,6 +15,12 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
     return config;
   },
+  // Disable server-side features
+  experimental: {
+    appDir: true,
+  },
+  // Add trailing slashes for static export
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
