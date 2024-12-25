@@ -1,0 +1,101 @@
+.heroContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  gap: 4rem;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.platforms {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.platforms span {
+  color: #666;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.demoButton, .signupButton {
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.demoButton {
+  background: transparent;
+  border: 2px solid #3182CE;
+  color: #3182CE;
+}
+
+.demoButton:hover {
+  background: #EBF8FF;
+}
+
+.signupButton {
+  background: #3182CE;
+  border: none;
+  color: white;
+}
+
+.signupButton:hover {
+  background: #2C5282;
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .platforms {
+    justify-content: center;
+  }
+} 

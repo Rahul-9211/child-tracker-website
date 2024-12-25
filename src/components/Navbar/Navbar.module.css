@@ -1,0 +1,97 @@
+.navbar {
+  background: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #4A5568;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownBtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4A5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.arrow {
+  font-size: 0.8rem;
+}
+
+.dropdownContent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.dropdownContent a {
+  padding: 0.5rem 1rem;
+  color: #4A5568;
+  text-decoration: none;
+}
+
+.dropdownContent a:hover {
+  background: #F7FAFC;
+}
+
+.loginBtn {
+  color: #3182CE !important;
+}
+
+.trialBtn {
+  background: #3182CE;
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.trialBtn:hover {
+  background: #2C5282;
+} 
