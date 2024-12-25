@@ -10,7 +10,7 @@ const Hero = () => {
           The World&apos;s <span className="bg-clip-text text-transparent bg-gradient-to-b from-pink-500 via-purple-500 to-blue-500 font-semibold">#1</span> Spy Phone App
         </h1>
         <p className="text-xl text-gray-500 mb-8 tracking-[.5px]">
-          Spyzie is used by countless parents globally to track their child&apos;s cell phones. Even employers use Spyzie to make sure that their staff are actually working on the job at hand
+          Child-Tracker is used by countless parents globally to track their child&apos;s cell phones. Even employers use Child-Tracker to make sure that their staff are actually working on the job at hand
         </p>
         
         <div className="flex items-center gap-4 mb-8">

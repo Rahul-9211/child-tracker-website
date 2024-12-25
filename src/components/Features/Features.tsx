@@ -25,7 +25,7 @@ const features = [
   {
     icon: "/star-icon.svg",
     title: "Priority to Security",
-    description: "There is no chance of your data being stolen with Spyzie's world class encryption."
+    description: "There is no chance of your data being stolen with Child-Tracker's world class encryption."
   },
   {
     icon: "/shield-icon.svg",
@@ -40,7 +40,7 @@ const features = [
   {
     icon: "/support-icon.svg",
     title: "24/7 Customer Service",
-    description: "Spyzie provides 24/7 resolution to problems."
+    description: "Child-Tracker provides 24/7 resolution to problems."
   }
 ];
 
@@ -120,7 +120,7 @@ const Features = () => {
       {/* Features Section */}
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiByeD0iMjAiIHJ5PSIyMCIvPjwvc3ZnPg==')] py-16 rounded-3xl">
         <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">
-          Why Choose Spyzie?
+          Why Choose Child-Tracker?
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">

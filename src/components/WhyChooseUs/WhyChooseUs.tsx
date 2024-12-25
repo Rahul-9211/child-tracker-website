@@ -3,7 +3,7 @@
 const features = [
   {
     title: "Priority to Security",
-    description: "There is no chance of your data being stolen with Spyzie's world class encryption."
+    description: "There is no chance of your data being stolen with Child-Tracker's world class encryption."
   },
   {
     title: "100% Hidden",
@@ -15,7 +15,7 @@ const features = [
   },
   {
     title: "24/7 Customer Service",
-    description: "Spyzie provides 24/7 resolution to problems."
+    description: "Child-Tracker provides 24/7 resolution to problems."
   }
 ];
 

@@ -43,9 +43,9 @@ const RemoteSteps = () => {
             {/* Center steps */}
             <div className="space-y-8 tracking-[1px]">
               {[
-                { title: "Sign Up", desc: "Create a free Spyzie account with your email." },
-                { title: "Configure Spyzie", desc: "Spyzie's setup wizard will guide you through the configuration process." },
-                { title: "Start Monitoring", desc: "Access Spyzie's dashboard and view all their data." }
+                { title: "Sign Up", desc: "Create a free Child-Tracker account with your email." },
+                { title: "Configure Child-Tracker", desc: "Child-Tracker's setup wizard will guide you through the configuration process." },
+                { title: "Start Monitoring", desc: "Access Child-Tracker's dashboard and view all their data." }
               ].map((step, index) => (
                 <div key={index} className="flex items-start gap-4 group">
                   <div className="bg-white/10 backdrop-blur-md p-4 rounded-2xl 

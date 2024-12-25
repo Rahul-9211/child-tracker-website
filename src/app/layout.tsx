@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spyzie",
+  title: "Child-Tracker",
   description: "Monitor everything on others' Android/iPhone devices",
 };
 
