@@ -78,7 +78,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative bg-white dark:bg-black">
+    <div className="relative bg-white dark:bg-black pt-12">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 -z-10"
@@ -86,23 +86,25 @@ const Hero = () => {
       />
       <div className="flex flex-col lg:flex-row justify-between items-center max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:px-8 mt-8 lg:mt-16">
         <div className="flex-1 lg:pr-8 text-center lg:text-left mb-8 lg:mb-0 pt-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4 sm:mb-6 tracking-tight">
-            <TypeAnimation
-              sequence={[
-                'Advanced Mobile Monitoring',
-                1000,
-                'Real-time Device Tracking',
-                1000,
-                'Secure Data Protection',
-                1000,
-                'Advanced Mobile Monitoring',
-              ]}
-              wrapper="span"
-              speed={50}
-              style={{ display: 'inline-block' }}
-              repeat={Infinity}
-              className="typewriter"
-            />
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4 sm:mb-6 tracking-tight h-20 sm:h-24 lg:h-28">
+            <div className="inline-block min-w-full">
+              <TypeAnimation
+                sequence={[
+                  'Advanced Mobile Monitoring',
+                  1000,
+                  'Real-time Device Tracking',
+                  1000,
+                  'Secure Data Protection',
+                  1000,
+                  'Advanced Mobile Monitoring',
+                ]}
+                wrapper="span"
+                speed={50}
+                style={{ display: 'inline-block' }}
+                repeat={Infinity}
+                className="typewriter"
+              />
+            </div>
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 tracking-tight max-w-2xl">
             Leverage cutting-edge technology to monitor mobile device activities in real-time. 
