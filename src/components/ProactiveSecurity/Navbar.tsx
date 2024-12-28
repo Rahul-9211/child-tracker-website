@@ -42,6 +42,8 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isOpen }) => {
 const Navbar = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const dropdownData = {
     product: [
@@ -141,47 +143,58 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Add this effect to handle outside clicks for mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <nav className="border-b relative bg-white shadow-sm" ref={navRef}>
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 border-b" ref={navRef}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-          <Link href="/" className="flex-shrink-0">
-            <svg
-              width="120"
-              height="32"
-              viewBox="0 0 120 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-24 sm:w-32 h-auto"
-            >
-              <path
-                d="M20 8C20 12.4183 16.4183 16 12 16C7.58172 16 4 12.4183 4 8C4 3.58172 7.58172 0 12 0C16.4183 0 20 3.58172 20 8Z"
-                fill="#000"
-              />
-              <path
-                d="M24 24C24 28.4183 20.4183 32 16 32H8C3.58172 32 0 28.4183 0 24V20C0 17.7909 1.79086 16 4 16H20C22.2091 16 24 17.7909 24 20V24Z"
-                fill="#000"
-              />
-              <text
-                x="32"
-                y="22"
-                fontFamily="Arial"
-                fontSize="18"
-                fill="currentColor"
-                className="text-gray-800 dark:text-white-200"
-                fontWeight="bold"
+            <Link href="/" className="block">
+              <svg
+                width="120"
+                height="32"
+                viewBox="0 0 120 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-24 sm:w-32 h-auto"
               >
-                KidSafe
-              </text>
-            </svg>
-          </Link>
+                <path
+                  d="M20 8C20 12.4183 16.4183 16 12 16C7.58172 16 4 12.4183 4 8C4 3.58172 7.58172 0 12 0C16.4183 0 20 3.58172 20 8Z"
+                  fill="#000"
+                />
+                <path
+                  d="M24 24C24 28.4183 20.4183 32 16 32H8C3.58172 32 0 28.4183 0 24V20C0 17.7909 1.79086 16 4 16H20C22.2091 16 24 17.7909 24 20V24Z"
+                  fill="#000"
+                />
+                <text
+                  x="32"
+                  y="22"
+                  fontFamily="Arial"
+                  fontSize="18"
+                  fill="currentColor"
+                  className="text-gray-800 dark:text-white-200"
+                  fontWeight="bold"
+                >
+                  KidSafe
+                </text>
+              </svg>
+            </Link>
           </div>
 
-          {/* Main Navigation */}
-         <div className='hidden md:flex items-center justify-center'>
-         <div className="hidden md:flex items-end space-x-8 pr-8">
+         <div className='hidden md:flex'> {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8 pr-12">
             <div className="relative group">
               <Link 
                 href="/product"
@@ -202,9 +215,7 @@ const Navbar = () => {
               <Dropdown items={dropdownData.product} isOpen={openDropdown === 'product'} />
             </div>
 
-          
-
-           <div> <Link href="/pricing" className="text-[15px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
+            <div> <Link href="/pricing" className="text-[15px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
               Pricing
             </Link></div>
 
@@ -223,7 +234,6 @@ const Navbar = () => {
               </button>
               <Dropdown items={dropdownData.resources} isOpen={openDropdown === 'resources'} />
             </div>
-
           </div>
 
           {/* Right side buttons */}
@@ -240,19 +250,104 @@ const Navbar = () => {
             <Link href="#" className="text-[15px] bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-colors duration-150">
               Contact Sales
             </Link>
-          </div>
-         </div>
+          </div></div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button className="text-gray-700 hover:text-gray-900">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <button
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+            }}
+          >
+            <span className="sr-only">{isMobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
+            {isMobileMenuOpen ? (
+              // Close (X) icon
+              <svg 
+                className="h-6 w-6" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M6 18L18 6M6 6l12 12" 
+                />
               </svg>
-            </button>
-          </div>
+            ) : (
+              // Hamburger icon
+              <svg 
+                className="h-6 w-6" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M4 6h16M4 12h16M4 18h16" 
+                />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div 
+          ref={mobileMenuRef}
+          className="md:hidden fixed inset-0 top-[64px] bg-white z-40"
+        >
+          <div className="h-full overflow-y-auto pb-20">
+            <div className="px-4 pt-2 pb-3 space-y-3">
+              <Link 
+                href="/product" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Product
+              </Link>
+              <Link 
+                href="/pricing" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
+                href="/resources" 
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Resources
+              </Link>
+            </div>
+
+            <div className="px-4 py-3 border-t border-gray-200">
+              <div className="space-y-3">
+                <Link 
+                  href="/login" 
+                  className="block w-full px-4 py-2 text-center text-[#006D77] hover:bg-gray-50 rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Log in
+                </Link>
+                <Link 
+                  href="/signup" 
+                  className="block w-full px-4 py-2 text-center text-white bg-[#006D77] hover:bg-[#004E57] rounded-lg"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign up
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

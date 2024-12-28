@@ -5,23 +5,23 @@ import avatar3 from '../../../public/avatar3.svg';
 
 const Hero = () => {
   return (
-    <section className="relative bg-[#fff] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 py-20">
-        <div className="flex flex-col lg:flex-row items-center">
+    <section className="relative bg-[#fff] overflow-hidden px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto py-12 sm:py-20">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Content */}
-          <div className="w-full lg:w-1/2 lg:pr-8 mb-12 lg:mb-0">
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
             <div className="text-sm uppercase tracking-wider text-gray-600 mb-4">
               PROACTIVE CREDENTIAL SECURITY
             </div>
-            <h1 className="text-[3.75rem] leading-[1.2] font-semibold text-[#001E2B] mb-6">
+            <h1 className="text-[2.5rem] sm:text-[3.75rem] leading-[1.2] font-semibold text-[#001E2B] mb-6">
               Maximum visibility.
-              <br />
+              <br className="hidden sm:block" />
               Complete protection.
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-xl">
+            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
               Introducing Credential Risk Detection, the industry-first monitoring tool that detects threats across your entire organization.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button className="bg-[#006D77] text-white px-6 py-3 rounded-lg hover:bg-[#004E57] transition-colors duration-150">
                 Contact Sales
               </button>
@@ -31,8 +31,8 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Image Section */}
-          <div className="w-full lg:w-1/2 relative">
+          {/* Right Content */}
+          <div className="w-full lg:w-1/2 relative mt-8 lg:mt-0">
             <div className="relative">
               {/* Main Image */}
               <div className="rounded-2xl overflow-hidden relative z-10">
