@@ -44,6 +44,7 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const dropdownData = {
     product: [
@@ -143,17 +144,34 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Add this effect to handle outside clicks for mobile menu
+  // Update the outside click handler
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      // Check if click is outside both the menu and the button
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        buttonRef.current && 
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Update the button click handler
+  const handleMenuToggle = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMobileMenuOpen(prev => !prev);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 border-b" ref={navRef}>
@@ -254,11 +272,9 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
+            ref={buttonRef}
             className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsMobileMenuOpen(!isMobileMenuOpen);
-            }}
+            onClick={handleMenuToggle}
           >
             <span className="sr-only">{isMobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
             {isMobileMenuOpen ? (
@@ -301,6 +317,7 @@ const Navbar = () => {
         <div 
           ref={mobileMenuRef}
           className="md:hidden fixed inset-0 top-[64px] bg-white z-40"
+          onClick={e => e.stopPropagation()}
         >
           <div className="h-full overflow-y-auto pb-20">
             <div className="px-4 pt-2 pb-3 space-y-3">
