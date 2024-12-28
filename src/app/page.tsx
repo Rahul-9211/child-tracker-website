@@ -1,21 +1,19 @@
-import Navbar from "../components/Navbar/Navbar";
-import Hero from "../components/Hero/Hero";
-import Products from "../components/Products/Products";
-import Testimonials from "../components/Testimonials/Testimonials";
-import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
-import RemoteSteps from "../components/RemoteSteps/RemoteSteps";
-import Footer from "../components/Footer/Footer";
+import Navbar from '@/components/ProactiveSecurity/Navbar';
+import Hero from '@/components/ProactiveSecurity/Hero';
+import Features from '@/components/ProactiveSecurity/Features';
+import UserFlow from '@/components/ProactiveSecurity/UserFlow';
+import Pricing from '@/components/ProactiveSecurity/Pricing';
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full bg-white">
+    <>
       <Navbar />
-      <Hero />
-      <RemoteSteps />
-      <Products />
-      <WhyChooseUs />
-      <Testimonials />
-      <Footer />
-    </main>
+      <main>
+        <Hero />
+        <UserFlow />
+        <Features />
+        <Pricing />
+      </main>
+    </>
   );
 }

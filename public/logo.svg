@@ -1,0 +1,28 @@
+  <svg
+              width="120"
+              height="32"
+              viewBox="0 0 120 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-24 sm:w-32 h-auto"
+            >
+              <path
+                d="M20 8C20 12.4183 16.4183 16 12 16C7.58172 16 4 12.4183 4 8C4 3.58172 7.58172 0 12 0C16.4183 0 20 3.58172 20 8Z"
+                fill="#4A90E2"
+              />
+              <path
+                d="M24 24C24 28.4183 20.4183 32 16 32H8C3.58172 32 0 28.4183 0 24V20C0 17.7909 1.79086 16 4 16H20C22.2091 16 24 17.7909 24 20V24Z"
+                fill="#4A90E2"
+              />
+              <text
+                x="32"
+                y="22"
+                fontFamily="Arial"
+                fontSize="18"
+                fill="currentColor"
+                className="text-gray-800 dark:text-gray-200"
+                fontWeight="bold"
+              >
+                KidSafe
+              </text>
+            </svg>
