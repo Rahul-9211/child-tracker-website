@@ -28,7 +28,7 @@ const UserFlow = () => {
     <section className="py-16 sm:py-28 bg-[#EDF6F9] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -43,7 +43,7 @@ const UserFlow = () => {
                 <div className="text-5xl font-bold text-[#83C5BE] opacity-20 mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-medium text-gray-900 mb-2">
                   {step.title}
                 </h3>
                 <p className="text-gray-600">

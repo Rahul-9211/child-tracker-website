@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import logo from '../../../public/LookSense.png';
 interface DropdownProps {
   items: {
     title: string;
@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isOpen }) => {
           className="flex items-start px-6 py-3 hover:bg-gray-50 group transition-colors duration-150"
         >
           <div>
-            <div className="text-[15px] font-medium text-gray-900 group-hover:text-teal-700 mb-0.5">
+            <div className="text-[17px] font-medium text-gray-900 group-hover:text-teal-700 mb-0.5">
               {item.title}
             </div>
             {item.description && (
@@ -180,34 +180,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="block">
-              <svg
-                width="120"
-                height="32"
-                viewBox="0 0 120 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-24 sm:w-32 h-auto"
-              >
-                <path
-                  d="M20 8C20 12.4183 16.4183 16 12 16C7.58172 16 4 12.4183 4 8C4 3.58172 7.58172 0 12 0C16.4183 0 20 3.58172 20 8Z"
-                  fill="#000"
-                />
-                <path
-                  d="M24 24C24 28.4183 20.4183 32 16 32H8C3.58172 32 0 28.4183 0 24V20C0 17.7909 1.79086 16 4 16H20C22.2091 16 24 17.7909 24 20V24Z"
-                  fill="#000"
-                />
-                <text
-                  x="32"
-                  y="22"
-                  fontFamily="Arial"
-                  fontSize="18"
-                  fill="currentColor"
-                  className="text-gray-800 dark:text-white-200"
-                  fontWeight="bold"
-                >
-                  KidSafe
-                </text>
-              </svg>
+             <Image src={logo} alt="KidSafe" width={150} height={72} />
             </Link>
           </div>
 
@@ -216,7 +189,7 @@ const Navbar = () => {
             <div className="relative group">
               <Link 
                 href="/product"
-                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[15px]
+                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[17px]
                   ${openDropdown === 'product' ? 'text-teal-700' : 'text-gray-700'}`}
                 onClick={(e) => {
                   e.preventDefault();
@@ -233,13 +206,13 @@ const Navbar = () => {
               <Dropdown items={dropdownData.product} isOpen={openDropdown === 'product'} />
             </div>
 
-            <div> <Link href="/pricing" className="text-[15px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
+            <div> <Link href="/pricing" className="text-[17px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
               Pricing
             </Link></div>
 
             <div className="relative group">
               <button 
-                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[15px]
+                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[17px]
                   ${openDropdown === 'resources' ? 'text-teal-700' : 'text-gray-700'}`}
                 onClick={(e) => handleDropdownToggle('resources', e)}
               >
@@ -256,16 +229,16 @@ const Navbar = () => {
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/login" className="text-[15px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
+            <Link href="/login" className="text-[17px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
               Log in
             </Link>
-            <Link href="#" className="text-[15px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
+            <Link href="#" className="text-[17px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
               Download
             </Link>
-            <Link href="#" className="text-[15px] bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-150">
+            <Link href="#" className="text-[17px] bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-150">
               Request a demo
             </Link>
-            <Link href="#" className="text-[15px] bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-colors duration-150">
+            <Link href="#" className="text-[17px] bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition-colors duration-150">
               Contact Sales
             </Link>
           </div></div>

@@ -28,7 +28,7 @@ const Features = () => {
     <section className="py-12 sm:py-20 bg-[#fff] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             Monitoring Features
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
@@ -43,7 +43,7 @@ const Features = () => {
                 <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-[#83C5BE] rounded-full z-0" />
               )}
               <div className="absolute inset-0 bg-[#006D77] opacity-10 rounded-2xl pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 20%, transparent 20%)', backgroundSize: '20px 20px' }}></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 relative">
+              <h3 className="text-3xl font-medium text-gray-900 mb-6 relative">
                 {category.title}
               </h3>
               <div className="space-y-4 sm:space-y-6 relative">

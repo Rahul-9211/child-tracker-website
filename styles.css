@@ -1,0 +1,35 @@
+/* Import a similar Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Add Clarendon Graphic font declarations */
+@font-face {
+    font-family: 'Clarendon Graphic';
+    src: url('../fonts/ClarendonGraphic-Regular.woff2') format('woff2'),
+         url('../fonts/ClarendonGraphic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clarendon Graphic';
+    src: url('../fonts/ClarendonGraphic-Bold.woff2') format('woff2'),
+         url('../fonts/ClarendonGraphic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+} 
+
+/* Add heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+} 
+
+/* Option 2: Using a Google Font alternative */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Pro', Georgia, serif;
+} 

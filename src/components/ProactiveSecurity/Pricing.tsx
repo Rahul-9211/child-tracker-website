@@ -59,7 +59,7 @@ const Pricing = () => {
     <section className="py-12 sm:py-20 bg-[#EDF6F9] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -81,7 +81,7 @@ const Pricing = () => {
                 </div>
               )}
               <div className="p-6 sm:p-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <h3 className="text-xl sm:text-2xl font-medium text-gray-900 mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
                 <div className="mb-6">
                   <span className="text-4xl font-bold text-gray-900">${plan.price}</span>
@@ -112,7 +112,7 @@ const Pricing = () => {
 
         {/* FAQ Preview */}
         <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Have questions?</h3>
+          <h3 className="text-2xl font-medium text-gray-900 mb-4">Have questions?</h3>
           <p className="text-gray-600 mb-6">
             Check out our FAQ or contact our support team
           </p>

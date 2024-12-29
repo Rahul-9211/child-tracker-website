@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="text-sm uppercase tracking-wider text-gray-600 mb-4">
               PROACTIVE CREDENTIAL SECURITY
             </div>
-            <h1 className="text-[2.5rem] sm:text-[3.75rem] leading-[1.2] font-semibold text-[#001E2B] mb-6">
+            <h1 className="text-[2.5rem] sm:text-[3.5rem] leading-[1.2] font-medium text-[#001E2B] mb-6">
               Maximum visibility.
               <br className="hidden sm:block" />
               Complete protection.

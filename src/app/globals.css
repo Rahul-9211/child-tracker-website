@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add font declarations */
+@font-face {
+  font-family: 'Clarendon Graphic';
+  src: url('/fonts/ClarendonGraphic-Regular.woff2') format('woff2'),
+       url('/fonts/ClarendonGraphic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clarendon Graphic';
+  src: url('/fonts/ClarendonGraphic-Bold.woff2') format('woff2'),
+       url('/fonts/ClarendonGraphic-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basel Grotesk';
+  src: url('/fonts/BaselGrotesk-Regular.woff2') format('woff2'),
+       url('/fonts/BaselGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add base font styles */
+@layer base {
+  body {
+    font-family: "Basel Grotesk", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Clarendon Graphic", Georgia, sans-serif;
+  }
+}
+
 :root {
   /* Primary Colors */
   --primary-light: #EEF2FF;  /* Indigo 50 */

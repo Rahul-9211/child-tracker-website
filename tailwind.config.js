@@ -43,7 +43,11 @@ module.exports = {
         fadeIn: 'fadeIn 0.2s ease-out forwards',
         slideIn: 'slideIn 0.3s ease-out forwards',
         blink: 'blink 0.75s step-end infinite'
-      }
+      },
+      fontFamily: {
+        sans: ['"Basel Grotesk"', 'sans-serif'],
+        clarendon: ['"Clarendon Graphic"', 'Georgia', 'sans-serif'],
+      },
     }
   },
   plugins: [],
