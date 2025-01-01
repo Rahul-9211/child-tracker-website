@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 /* Add font declarations */
 @font-face {
   font-family: 'Clarendon Graphic';
@@ -30,12 +33,40 @@
   font-display: swap;
 }
 
-/* Add base font styles */
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('/fonts/ESRebondGrotesque-Regular.woff2') format('woff2'),
+       url('/fonts/ESRebondGrotesque-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ES Rebond Grotesque';
+  src: url('/fonts/ESRebondGrotesque-Bold.woff2') format('woff2'),
+       url('/fonts/ESRebondGrotesque-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Update base font styles */
 @layer base {
   body {
-    font-family: "Basel Grotesk", sans-serif;
+    font-family: "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   }
 
+  /* Keep heading font options */
+  .heading-clarendon {
+    font-family: "Clarendon Graphic", Georgia, sans-serif;
+  }
+
+  .heading-rebond {
+    font-family: "ES Rebond Grotesque", sans-serif;
+  }
+
+  /* Default heading style */
   h1, h2, h3, h4, h5, h6 {
     font-family: "Clarendon Graphic", Georgia, sans-serif;
   }
