@@ -25,7 +25,7 @@ export default function RootLayout({
           >
             {children}
           </ThemeProvider>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </body>
     </html>
