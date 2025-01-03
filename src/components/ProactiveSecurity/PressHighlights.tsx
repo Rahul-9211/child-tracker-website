@@ -1,10 +1,36 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const PressHighlights = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3);
+
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth < 640) {
+        setCardsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+
+    updateCardsToShow();
+    window.addEventListener('resize', updateCardsToShow);
+
+    return () => window.removeEventListener('resize', updateCardsToShow);
+  }, []);
+
+  const nextSlide = () => {
+    setActiveIndex((current) => (current >= pressReviews.length - cardsToShow ? 0 : current + 1));
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((current) => (current === 0 ? pressReviews.length - cardsToShow : current - 1));
+  };
 
   const pressReviews = [
     {
@@ -39,20 +65,6 @@ const PressHighlights = () => {
     }
   ];
 
-  const nextSlide = () => {
-    setActiveIndex((current) => {
-      const cardsToShow = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      return current >= pressReviews.length - cardsToShow ? 0 : current + 1;
-    });
-  };
-
-  const prevSlide = () => {
-    setActiveIndex((current) => {
-      const cardsToShow = window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3;
-      return current === 0 ? pressReviews.length - cardsToShow : current - 1;
-    });
-  };
-
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,9 +86,7 @@ const PressHighlights = () => {
           <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ 
-                transform: `translateX(-${activeIndex * (100 / (window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3))}%)`
-              }}
+              style={{ transform: `translateX(-${activeIndex * (100 / cardsToShow)}%)` }}
             >
               {pressReviews.map((review, index) => (
                 <div
@@ -127,12 +137,12 @@ const PressHighlights = () => {
           <div className="flex flex-col sm:flex-row justify-center sm:justify-end items-center gap-4 sm:gap-6 mt-6 sm:mt-8">
             {/* Dots Navigation */}
             <div className="flex items-center gap-2 sm:gap-3 order-2 sm:order-1">
-              {[...Array(Math.ceil(pressReviews.length / (window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3)))].map((_, index) => (
+              {[...Array(Math.ceil(pressReviews.length / cardsToShow))].map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setActiveIndex(index * (window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3))}
+                  onClick={() => setActiveIndex(index * cardsToShow)}
                   className={`transition-all duration-300 rounded-full
-                    ${Math.floor(activeIndex / (window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3)) === index 
+                    ${Math.floor(activeIndex / cardsToShow) === index 
                       ? 'w-6 sm:w-8 h-2 bg-[#006D77]' 
                       : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
                     }`}
