@@ -58,7 +58,7 @@ const Features = () => {
     <section className="py-20">
       {/* Testimonial Section */}
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <h2 className="text-4xl font-bold text-[#4A5568] text-center mb-12">
+        <h2 className="heading-rebond text-4xl font-bold text-[#4A5568] text-center mb-12">
           Why our users love us
         </h2>
 
@@ -119,7 +119,7 @@ const Features = () => {
 
       {/* Features Section */}
       <div className=" mx-auto px-4 sm:px-6 lg:px-8 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiByeD0iMjAiIHJ5PSIyMCIvPjwvc3ZnPg==')] py-16 rounded-3xl">
-        <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">
+        <h2 className="heading-rebond text-4xl font-bold text-gray-900 text-center mb-16">
           Why Choose Child-Tracker?
         </h2>
         

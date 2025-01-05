@@ -60,7 +60,7 @@ const DeviceCompatibility = () => {
     <section className="py-20 bg-[#1B2B3A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-4xl font-medium mb-4">
+          <h2 className="heading-rebond text-4xl sm:text-4xl font-medium mb-4">
           Dozens of Features. One App.
           </h2>
           <p className="text-md text-gray-400 max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ const DeviceCompatibility = () => {
         <div className="flex justify-center gap-4 mt-12">
         {/* <Link
               href="/signup" 
-              className="text-[17px] bg-[#006D77] text-white px-4 py-2 rounded-lg hover:bg-[#005a63] transition-colors duration-150 flex items-center gap-2"
+              className="text-[17px] bg-[#166cf7] text-white px-4 py-2 rounded-lg hover:bg-[#005a63] transition-colors duration-150 flex items-center gap-2"
             >
               TRY NOW
             </Link> */}

@@ -66,7 +66,7 @@ const ProductPage = () => {
         <section className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose KidSafe?</h2>
+              <h2 className="heading-rebond text-3xl font-bold text-gray-900 mb-4">Why Choose KidSafe?</h2>
               <p className="text-xl text-gray-600">Industry-leading features for complete peace of mind</p>
             </div>
             

@@ -28,7 +28,7 @@ const Features = () => {
     <section className="py-12 sm:py-20 bg-[#fff] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
+          <h2 className="heading-rebond text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             Monitoring Features
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
@@ -42,14 +42,14 @@ const Features = () => {
               {idx === 1 && (
                 <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-[#83C5BE] rounded-full z-0" />
               )}
-              <div className="absolute inset-0 bg-[#006D77] opacity-10 rounded-2xl pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 20%, transparent 20%)', backgroundSize: '20px 20px' }}></div>
+              <div className="absolute inset-0 bg-[#166cf7] opacity-10 rounded-2xl pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.5) 20%, transparent 20%)', backgroundSize: '20px 20px' }}></div>
               <h3 className="text-3xl font-medium text-gray-900 mb-6 relative">
                 {category.title}
               </h3>
               <div className="space-y-4 sm:space-y-6 relative">
                 {category.items.map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="text-[#006D77] text-lg sm:text-xl flex-shrink-0">
+                    <div className="text-[#166cf7] text-lg sm:text-xl flex-shrink-0">
                       {item.icon}
                     </div>
                     <p className="text-sm sm:text-base text-gray-700">{item.text}</p>

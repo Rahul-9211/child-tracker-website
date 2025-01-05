@@ -59,7 +59,7 @@ const MonitoringFeatures = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-xl uppercase tracking-[5px] text-[#006D77] mb-6">
+          <h2 className="heading-rebond text-xl uppercase tracking-[5px] text-[#166cf7] mb-6">
             FEATURES
           </h2>
           <h3 className="text-3xl sm:text-4xl font-medium text-gray-900">
@@ -78,10 +78,10 @@ const MonitoringFeatures = () => {
                 hover:transform hover:-translate-y-1 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
-                <div className="text-[#006D77] mb-4 bg-[#EDF6F9] p-4 rounded-full">
+                <div className="text-[#166cf7] mb-4 bg-[#EDF6F9] p-4 rounded-full">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-medium text-[#006D77] mb-3">
+                <h3 className="text-xl font-medium text-[#166cf7] mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 text-sm">
@@ -93,7 +93,7 @@ const MonitoringFeatures = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-[#006D77] text-white px-8 py-3 rounded-lg hover:bg-[#005a63] 
+          <button className="bg-[#166cf7] text-white px-8 py-3 rounded-lg hover:bg-[#005a63] 
             transition-colors duration-200 flex items-center gap-2 mx-auto">
             <span>Explore All Features</span>
             <svg 

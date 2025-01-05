@@ -64,7 +64,7 @@ export default function LoginPage() {
           </div>
           
           <div className="max-w-md mx-auto">
-            <h2 className="text-2xl font-medium text-[#001E2B] mb-8">
+            <h2 className="heading-rebond text-2xl font-medium text-[#001E2B] mb-8">
               Log in to Dashlane
             </h2>
 

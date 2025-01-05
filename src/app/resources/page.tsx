@@ -105,7 +105,7 @@ const ResourcesPage = () => {
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="heading-rebond text-3xl font-bold text-gray-900 mb-4">
                 Need Additional Help?
               </h2>
               <p className="text-gray-600 mb-8">

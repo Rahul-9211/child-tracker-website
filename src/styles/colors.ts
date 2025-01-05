@@ -1,6 +1,6 @@
 export const colors = {
   primary: {
-    main: '#006D77',  // teal-700 equivalent
+    main: '#166cf7',  // teal-700 equivalent
     light: '#83C5BE', // teal-400 equivalent
     lighter: '#EDF6F9', // very light teal
     dark: '#004E57',  // teal-800 equivalent

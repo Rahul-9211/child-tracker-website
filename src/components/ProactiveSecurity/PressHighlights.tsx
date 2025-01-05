@@ -69,7 +69,7 @@ const PressHighlights = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-lg sm:text-xl uppercase tracking-[5px] text-[#006D77] mb-4 sm:mb-6">
+          <h2 className="heading-rebond text-lg sm:text-xl uppercase tracking-[5px] text-[#166cf7] mb-4 sm:mb-6">
             TESTIMONIALS
           </h2>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-gray-900">
@@ -109,7 +109,7 @@ const PressHighlights = () => {
 
                     <a 
                       href={review.link}
-                      className="text-sm sm:text-base text-[#006D77] hover:text-[#005a63] inline-flex items-center gap-2 
+                      className="text-sm sm:text-base text-[#166cf7] hover:text-[#005a63] inline-flex items-center gap-2 
                         font-medium transition-colors duration-200"
                     >
                       Read full article
@@ -143,7 +143,7 @@ const PressHighlights = () => {
                   onClick={() => setActiveIndex(index * cardsToShow)}
                   className={`transition-all duration-300 rounded-full
                     ${Math.floor(activeIndex / cardsToShow) === index 
-                      ? 'w-6 sm:w-8 h-2 bg-[#006D77]' 
+                      ? 'w-6 sm:w-8 h-2 bg-[#166cf7]' 
                       : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
                     }`}
                   aria-label={`Go to slide group ${index + 1}`}

@@ -13,7 +13,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="w-full lg:w-1/2 text-center lg:text-left">
             <div className="text-sm uppercase tracking-wider text-gray-600 mb-4 flex items-center gap-2">
-              <FaShieldAlt className="w-5 h-5 text-[#006D77] mr-3" />
+              <FaShieldAlt className="w-5 h-5 text-[#166cf7] mr-3" />
               PROACTIVE CREDENTIAL SECURITY
             </div>
             <h1 className="text-[2.5rem] sm:text-[3.5rem] leading-[1.2] font-medium text-[#001E2B] mb-6 heading-rebond flex items-center gap-2">
@@ -25,11 +25,11 @@ const Hero = () => {
               Stay connected and informed with our powerful, user-friendly app designed for Android. Track and monitor effortlessly—now fully compatible with most Android Devices. Perfect for keeping your loved ones safe and secure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <button className="bg-[#006D77] text-white px-6 py-3 rounded-lg hover:bg-[#004E57] transition-colors duration-150 flex items-center gap-2">
+              <button className="bg-[#166cf7] text-white px-6 py-3 rounded-lg hover:bg-[#004E57] transition-colors duration-150 flex items-center gap-2">
                 {/* <FaPlay className="w-5 h-5" /> */}
                 View Demo
               </button>
-              <button className="bg-[#83C5BE] bg-opacity-20 text-[#006D77] px-6 py-3 rounded-lg hover:bg-opacity-30 transition-colors duration-150 flex items-center gap-2">
+              <button className=" border-black bg-gray-100 text-gray-70   text-black px-6 py-3 rounded-lg hover:bg-opacity-30 transition-colors duration-150 flex items-center gap-2">
                 <FaPlay className="w-5 h-5" />
                 Try Now
               </button>

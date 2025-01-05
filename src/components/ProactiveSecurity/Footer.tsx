@@ -71,7 +71,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-600 hover:text-[#006D77] text-sm transition-colors duration-200"
+                      className="text-gray-600 hover:text-[#166cf7] text-sm transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
             <div className="space-y-6">
               {locations.map((location) => (
                 <div key={location.region} className="space-y-2">
-                  <h4 className="text-[#006D77] text-sm font-medium">
+                  <h4 className="text-[#166cf7] text-sm font-medium">
                     {location.region}
                   </h4>
                   <p className="text-gray-600 text-sm whitespace-pre-line">
@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="flex items-center">
               <div className="relative">
                 <select 
-                  className="appearance-none bg-white border border-gray-300 rounded-lg py-2 pl-4 pr-10 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#006D77] focus:border-transparent"
+                  className="appearance-none bg-white border border-gray-300 rounded-lg py-2 pl-4 pr-10 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#166cf7] focus:border-transparent"
                 >
                   <option value="en">English</option>
                   <option value="es">Español</option>
@@ -126,11 +126,11 @@ const Footer = () => {
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">Follow @looksense</span>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-[#006D77]"><FaFacebook size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-[#006D77]"><FaLinkedin size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-[#006D77]"><FaTwitter size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-[#006D77]"><FaInstagram size={20} /></a>
-                <a href="#" className="text-gray-400 hover:text-[#006D77]"><FaYoutube size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-[#166cf7]"><FaFacebook size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-[#166cf7]"><FaLinkedin size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-[#166cf7]"><FaTwitter size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-[#166cf7]"><FaInstagram size={20} /></a>
+                <a href="#" className="text-gray-400 hover:text-[#166cf7]"><FaYoutube size={20} /></a>
               </div>
             </div>
           </div>

@@ -59,7 +59,7 @@ const Pricing = () => {
     <section className="py-12 sm:py-20 bg-[#EDF6F9] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
+          <h2 className="heading-rebond text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -72,11 +72,11 @@ const Pricing = () => {
             <div
               key={index}
               className={`relative bg-white rounded-2xl shadow-lg overflow-hidden transition-transform hover:scale-105 ${
-                plan.isPopular ? 'ring-2 ring-[#006D77]' : ''
+                plan.isPopular ? 'ring-2 ring-[#166cf7]' : ''
               }`}
             >
               {plan.isPopular && (
-                <div className="absolute top-0 right-0 bg-[#006D77] text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-[#166cf7] text-white px-3 py-1 text-sm font-medium rounded-bl-lg">
                   Most Popular
                 </div>
               )}

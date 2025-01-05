@@ -41,12 +41,12 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isOpen }) => {
         >
           <div className="flex items-start gap-3">
             {item.icon && (
-              <div className="mt-0.5 text-[#006D77] group-hover:text-[#83C5BE] transition-colors">
+              <div className="mt-0.5 text-[#166cf7] group-hover:text-[#3d58cd] transition-colors">
                 {item.icon}
               </div>
             )}
             <div>
-              <div className="text-[17px] font-medium text-gray-900 group-hover:text-[#006D77] mb-0.5">
+              <div className="text-[17px] font-medium text-gray-900 group-hover:text-[#166cf7] mb-0.5">
                 {item.title}
               </div>
               {item.description && (
@@ -194,8 +194,8 @@ const Navbar = () => {
             <div className="relative group">
               <Link 
                 href="/product"
-                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'product' ? 'text-teal-700' : 'text-gray-700'}`}
+                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
+                  ${openDropdown === 'product' ? 'text-blue-700' : 'text-gray-700'}`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleDropdownToggle('product', e);
@@ -203,7 +203,7 @@ const Navbar = () => {
               >
                 Product
                 <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200 
-                  ${openDropdown === 'product' ? 'rotate-180 text-teal-700' : ''}`} 
+                  ${openDropdown === 'product' ? 'rotate-180 text-blue-700' : ''}`} 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -214,8 +214,8 @@ const Navbar = () => {
             <div className="relative group">
               <Link 
                 href="/Feature"
-                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'feature' ? 'text-teal-700' : 'text-gray-700'}`}
+                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
+                  ${openDropdown === 'feature' ? 'text-blue-700' : 'text-gray-700'}`}
                 onClick={(e) => {
                   e.preventDefault();
                   handleDropdownToggle('feature', e);
@@ -223,7 +223,7 @@ const Navbar = () => {
               >
                 Feature
                 <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200 
-                  ${openDropdown === 'feature' ? 'rotate-180 text-teal-700' : ''}`} 
+                  ${openDropdown === 'feature' ? 'rotate-180 text-blue-700' : ''}`} 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -231,19 +231,19 @@ const Navbar = () => {
               <Dropdown items={dropdownData.feature} isOpen={openDropdown === 'feature'} />
             </div>
 
-            <div> <Link href="/pricing" className="text-[17px] text-gray-700 hover:text-teal-700 transition-colors duration-150">
+            <div> <Link href="/pricing" className="text-[17px] text-gray-700 hover:text-blue-700 transition-colors duration-150">
               Pricing
             </Link></div>
 
             <div className="relative group">
               <button 
-                className={`flex items-center hover:text-teal-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'resources' ? 'text-teal-700' : 'text-gray-700'}`}
+                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
+                  ${openDropdown === 'resources' ? 'text-blue-700' : 'text-gray-700'}`}
                 onClick={(e) => handleDropdownToggle('resources', e)}
               >
                 Resources
                 <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200
-                  ${openDropdown === 'resources' ? 'rotate-180 text-teal-700' : ''}`} 
+                  ${openDropdown === 'resources' ? 'rotate-180 text-blue-700' : ''}`} 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -264,7 +264,7 @@ const Navbar = () => {
             </Link>
             <Link 
               href="/signup" 
-              className="text-[17px] bg-[#006D77] text-white px-4 py-2 rounded-lg hover:bg-[#005a63] transition-colors duration-150 flex items-center gap-2"
+              className="text-[17px] bg-[#166cf7] text-white px-4 py-2 rounded-lg hover:bg-[#005a63] transition-colors duration-150 flex items-center gap-2"
             >
               <FaUserPlus className="w-4 h-4" />
               Sign up
@@ -324,21 +324,21 @@ const Navbar = () => {
             <div className="px-4 pt-2 pb-3 space-y-3">
               <Link 
                 href="/product" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Product
               </Link>
               <Link 
                 href="/pricing" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Pricing
               </Link>
               <Link 
                 href="/resources" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#006D77] hover:bg-gray-50 rounded-lg"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Resources
@@ -349,7 +349,7 @@ const Navbar = () => {
               <div className="space-y-3">
                 <Link 
                   href="/login" 
-                  className="flex items-center gap-2 w-full px-4 py-2 text-center text-[#006D77] hover:bg-gray-50 rounded-lg"
+                  className="flex items-center gap-2 w-full px-4 py-2 text-center text-[#166cf7] hover:bg-gray-50 rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <FaSignInAlt className="w-4 h-4" />
@@ -357,7 +357,7 @@ const Navbar = () => {
                 </Link>
                 <Link 
                   href="/signup" 
-                  className="flex items-center gap-2 justify-center w-full px-4 py-2 text-center text-white bg-[#006D77] hover:bg-[#005a63] rounded-lg"
+                  className="flex items-center gap-2 justify-center w-full px-4 py-2 text-center text-white bg-[#166cf7] hover:bg-[#005a63] rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <FaUserPlus className="w-4 h-4" />

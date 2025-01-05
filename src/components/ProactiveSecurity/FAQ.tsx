@@ -66,7 +66,7 @@ const FAQ = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
-          <h2 className="text-xl uppercase tracking-[5px] text-[#006D77] mb-6">
+          <h2 className="heading-rebond text-xl uppercase tracking-[5px] text-[#166cf7] mb-6">
             FAQ
           </h2>
           <h3 className="text-3xl sm:text-4xl font-medium text-gray-900">
@@ -91,7 +91,7 @@ const FAQ = () => {
                 >
                   <span className="text-gray-900 font-medium">{item.question}</span>
                   <svg
-                    className={`w-5 h-5 text-[#006D77] transform transition-transform duration-200 
+                    className={`w-5 h-5 text-[#166cf7] transform transition-transform duration-200 
                       ${openIndex === index ? 'rotate-45' : ''}`}
                     fill="none"
                     viewBox="0 0 24 24"

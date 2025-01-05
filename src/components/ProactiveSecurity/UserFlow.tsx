@@ -28,7 +28,7 @@ const UserFlow = () => {
     <section className="py-16 sm:py-28 bg-[#EDF6F9] px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
+          <h2 className="heading-rebond text-3xl sm:text-5xl font-medium text-gray-900 mb-4">
             How It Works
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -52,7 +52,7 @@ const UserFlow = () => {
               </div>
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <svg className="w-8 h-8 text-[#006D77]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8 text-[#166cf7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>

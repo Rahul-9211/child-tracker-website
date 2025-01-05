@@ -35,10 +35,10 @@ const BrandMarquee = () => {
   ];
 
   return (
-    <section className="py-12 bg-[#EDF6F9]">
+    <section className="py-12 bg-[#f3f8ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-xl uppercase tracking-[5px] text-[#006D77]">
+          <h2 className="heading-rebond text-xl uppercase tracking-[5px] text-[#166cf7]">
             FEATURED IN
           </h2>
         </div>

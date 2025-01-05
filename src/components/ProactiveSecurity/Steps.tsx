@@ -46,10 +46,10 @@ const Steps = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-xl uppercase tracking-[5px] text-[#006D77] mb-6 ">
+          <h2 className="heading-rebond text-xl uppercase tracking-[5px] text-[#166cf7] mb-6 ">
             QUICK SETUP
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-medium text-gray-900">
+          <h3 className="heading-rebond text-3xl sm:text-4xl font-medium text-gray-900">
             Start Protecting in Minutes
           </h3>
         </div>
@@ -62,7 +62,7 @@ const Steps = () => {
                 key={index}
                 className={`p-6 rounded-xl transition-all duration-300 cursor-pointer
                   ${activeStep === index ? 
-                    'bg-gradient-to-r from-[#EDF6F9] to-[#e5f4f7] shadow-lg scale-105' : 
+                    'bg-gradient-to-r from-[#d8e5fb] to-[#c7dbff] shadow-lg scale-105' : 
                     'hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-50'
                   }`}
                 onMouseEnter={() => setActiveStep(index)}
@@ -71,8 +71,8 @@ const Steps = () => {
                   <div className="flex-shrink-0">
                     <span className={`inline-flex items-center justify-center w-12 h-12 rounded-xl text-white shadow-lg
                       ${activeStep === index ? 
-                        'bg-gradient-to-r from-[#006D77] to-[#83C5BE] scale-110 transition-transform duration-300' : 
-                        'bg-gradient-to-r from-[#83C5BE] to-[#006D77] opacity-75 hover:opacity-100'
+                        'bg-gradient-to-r from-[#166cf7] to-[#166cf7] scale-110 transition-transform duration-300' : 
+                        'bg-gradient-to-r from-[#166cf7] to-[#166cf7] opacity-75 hover:opacity-100'
                       }`}
                     >
                       {step.icon}
@@ -82,14 +82,14 @@ const Steps = () => {
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className={`text-xl font-medium transition-colors duration-300
                         ${activeStep === index ? 
-                          'bg-gradient-to-r from-[#006D77] to-[#83C5BE] bg-clip-text text-transparent' : 
-                          'text-[#006D77]'
+                          'bg-gradient-to-r from-[#166cf7] to-[#78a1e3] bg-clip-text text-transparent' : 
+                          'text-[#166cf7]'
                         }`}
                       >
                         {step.title}
                       </h3>
                       <span className={`text-sm font-semibold transition-colors duration-300
-                        ${activeStep === index ? 'text-[#006D77]' : 'text-[#83C5BE]'}`}
+                        ${activeStep === index ? 'text-[#166cf7]' : 'text-[#166cf7]'}`}
                       >
                         {step.step}
                       </span>
