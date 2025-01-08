@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@layer base {
+  :root {
+    --framer-font-family: "Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif;
+    --framer-font-family-bold: "Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif;
+    --framer-font-family-bold-italic: "Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif;
+    --framer-font-family-italic: "Plus Jakarta Sans", "Plus Jakarta Sans Placeholder", sans-serif;
+  }
+
+  html {
+    font-family: var(--framer-font-family);
+  }
+  
+  .font-display {
+    font-family: var(--framer-font-family-bold);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Additional utility classes */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Gradient animations */
+.gradient-animate {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} 
+
+@layer utilities {
+  .dropdown-transition {
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+  }
+} 

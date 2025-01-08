@@ -1,7 +1,8 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaUserPlus, FaMobileAlt, FaShieldAlt } from 'react-icons/fa';
+import { FaUserPlus, FaMobileAlt, FaShieldAlt, FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Steps = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -24,98 +25,107 @@ const Steps = () => {
   const steps = [
     {
       step: 'Step 1',
-      title: 'Quick Sign Up',
-      description: 'Create your account in seconds',
-      icon: <FaUserPlus className="w-5 h-5" />
+      title: 'Create Account',
+      description: 'Sign up for a LookSense account and set up your parent profile',
+      icon: <FaUserPlus className="w-6 h-6 text-[#166cf7]" />
     },
     {
       step: 'Step 2',
-      title: 'Connect Device',
-      description: 'Easy 2-minute setup process',
-      icon: <FaMobileAlt className="w-5 h-5" />
+      title: 'Install App',
+      description: 'Install the LookSense app on your child\'s device',
+      icon: <FaMobileAlt className="w-6 h-6 text-[#166cf7]" />
     },
     {
       step: 'Step 3',
       title: 'Start Monitoring',
-      description: 'Real-time protection begins instantly',
-      icon: <FaShieldAlt className="w-5 h-5" />
+      description: 'Connect devices and start monitoring activities in real-time',
+      icon: <FaShieldAlt className="w-6 h-6 text-[#166cf7]" />
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(22,108,247,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(22,108,247,0.02)_1px,transparent_1px)] bg-[size:30px_30px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="heading-rebond text-xl uppercase tracking-[5px] text-[#166cf7] mb-6 ">
-            QUICK SETUP
+          <h2 className="font-jakarta text-sm font-medium tracking-[0.2em] text-[#166cf7] mb-3 uppercase">
+            GET STARTED IN MINUTES
           </h2>
-          <h3 className="heading-rebond text-3xl sm:text-4xl font-medium text-gray-900">
-            Start Protecting in Minutes
-          </h3>
+          <p className="font-jakarta-bold text-[2.75rem] sm:text-[3.75rem] leading-[1.1] text-[09090B] max-w-[600px] mx-auto">
+            Three simple steps to <span className="text-[#166cf7]">secure</span> your family
+          </p>
+          {/* <div className="mt-20 flex justify-center">
+          <Link 
+            href="/blog"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full hover:bg-gray-50 transition-all duration-200 shadow-sm hover:shadow"
+          >
+            <span className="font-jakarta-bold text-[15px] text-[09090B]">
+              Check our blog
+            </span>
+            <FaArrowRight className="w-4 h-4 text-[09090B] group-hover:translate-x-0.5 transition-transform duration-200" />
+          </Link>
+        </div> */}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Steps */}
-          <div className="space-y-8">
+          <div className="space-y-8 cursor-pointer">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-xl transition-all duration-300 cursor-pointer
-                  ${activeStep === index ? 
-                    'bg-gradient-to-r from-[#d8e5fb] to-[#c7dbff] shadow-lg scale-105' : 
-                    'hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-50'
-                  }`}
+                className="relative p-6 rounded-2xl transition-all duration-300 group cursor-pointer"
                 onMouseEnter={() => setActiveStep(index)}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <span className={`inline-flex items-center justify-center w-12 h-12 rounded-xl text-white shadow-lg
-                      ${activeStep === index ? 
-                        'bg-gradient-to-r from-[#166cf7] to-[#166cf7] scale-110 transition-transform duration-300' : 
-                        'bg-gradient-to-r from-[#166cf7] to-[#166cf7] opacity-75 hover:opacity-100'
-                      }`}
-                    >
-                      {step.icon}
-                    </span>
+                  <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center
+                    transition-colors duration-300
+                    ${activeStep === index ? 'bg-blue-50' : 'bg-gray-50 group-hover:bg-blue-50/50'}`}>
+                    {step.icon}
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className={`text-xl font-medium transition-colors duration-300
-                        ${activeStep === index ? 
-                          'bg-gradient-to-r from-[#166cf7] to-[#78a1e3] bg-clip-text text-transparent' : 
-                          'text-[#166cf7]'
-                        }`}
-                      >
-                        {step.title}
-                      </h3>
-                      <span className={`text-sm font-semibold transition-colors duration-300
-                        ${activeStep === index ? 'text-[#166cf7]' : 'text-[#166cf7]'}`}
-                      >
-                        {step.step}
-                      </span>
+                    <div className="font-jakarta-bold text-sm text-[#166cf7] mb-1">
+                      {step.step}
                     </div>
-                    <p className={`transition-colors duration-300
-                      ${activeStep === index ? 'text-gray-700' : 'text-gray-500'}`}
-                    >
+                    <h3 className="font-jakarta-bold text-lg text-[09090B] mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="font-jakarta text-[15px] text-gray-500 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
                 </div>
+
+                {/* Background and border effect on hover */}
+                <div className={`absolute inset-0 rounded-2xl transition-all duration-300
+                  ${activeStep === index 
+                    ? 'bg-white shadow-lg border border-blue-100' 
+                    : 'group-hover:bg-white/50'}`} 
+                  style={{ zIndex: -1 }}
+                />
+
+                {/* Active indicator */}
+                <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-[#166cf7] rounded-r-full
+                  transition-opacity duration-300
+                  ${activeStep === index ? 'opacity-100' : 'opacity-0'}`} 
+                />
               </div>
             ))}
           </div>
 
-          {/* Right side - Device Preview */}
-          <div className="relative w-full h-[400px]">
-            {/* Laptop Preview */}
+          {/* Right side - Laptop Preview */}
+          <div className="relative w-full h-[400px] cursor-pointer">
             <div className="relative w-full h-full">
               {/* Screen content - Behind laptop frame */}
               <div className="absolute inset-[12%] top-[8%] bottom-[15%] z-0 overflow-hidden rounded-[4%]">
                 {laptopScreens.map((screen, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-300
-                      ${activeStep === index ? 'opacity-100' : 'opacity-0'}`}
+                    className={`absolute inset-0 transition-all duration-500 transform
+                      ${activeStep === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'}`}
                   >
                     <Image
                       src={screen.image}
@@ -137,8 +147,14 @@ const Steps = () => {
                 priority
               />
             </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-gradient-to-br from-blue-100/20 to-purple-100/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute -top-6 -left-6 w-64 h-64 bg-gradient-to-tr from-blue-100/20 to-purple-100/20 rounded-full blur-3xl -z-10" />
           </div>
         </div>
+
+     
       </div>
     </section>
   );

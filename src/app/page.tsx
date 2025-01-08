@@ -33,9 +33,10 @@ export default function Home() {
 
         <BrandMarquee />
 
-        <Stats />
 
         <Steps />
+        <Stats />
+
         <MonitoringFeatures/>
         <DeviceCompatibility />
         <PressHighlights />

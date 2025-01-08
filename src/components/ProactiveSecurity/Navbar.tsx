@@ -15,7 +15,8 @@ import {
   FaHeadset,
   FaBook,
   FaQuestionCircle,
-  FaBlog
+  FaBlog,
+  FaArrowRight
 } from 'react-icons/fa';
 
 interface DropdownProps {
@@ -46,7 +47,7 @@ const Dropdown: React.FC<DropdownProps> = ({ items, isOpen }) => {
               </div>
             )}
             <div>
-              <div className="text-[17px] font-medium text-gray-900 group-hover:text-[#166cf7] mb-0.5">
+              <div className="text-[17px] font-medium text-[09090B] group-hover:text-[#166cf7] mb-0.5">
                 {item.title}
               </div>
               {item.description && (
@@ -132,11 +133,6 @@ const Navbar = () => {
     ],
   };
 
-  const handleDropdownToggle = (dropdown: string, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
-  };
-
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -179,189 +175,239 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 border-b" ref={navRef}>
+    <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="block">
-             <Image src={logo} alt="KidSafe" width={150} height={72} />
+              <Image 
+                src={logo} 
+                alt="LookSense" 
+                width={110} 
+                height={28} 
+                className="h-6 w-auto"
+              />
             </Link>
           </div>
 
-         <div className='hidden md:flex'> {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8 pr-12">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <Link 
                 href="/product"
-                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'product' ? 'text-blue-700' : 'text-gray-700'}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleDropdownToggle('product', e);
-                }}
+                className="flex items-center text-[14px] font-medium text-[09090B] hover:text-[#166cf7] transition-colors duration-150 group"
               >
                 Product
-                <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200 
-                  ${openDropdown === 'product' ? 'rotate-180 text-blue-700' : ''}`} 
+                <svg className="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-              <Dropdown items={dropdownData.product} isOpen={openDropdown === 'product'} />
+              <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                <div className="bg-white rounded-lg shadow-lg py-3 border border-gray-100">
+                  {dropdownData.product.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.href}
+                      className="flex items-start px-4 py-2 hover:bg-blue-50/40 group/item transition-colors duration-150"
+                    >
+                      <div className="flex items-start gap-3">
+                        {item.icon && (
+                          <div className="mt-0.5 text-gray-500 group-hover/item:text-[#166cf7] transition-colors">
+                            {item.icon}
+                          </div>
+                        )}
+                        <div>
+                          <div className="text-[12px] font-medium text-[09090B] group-hover/item:text-[#166cf7] mb-0.5">
+                            {item.title}
+                          </div>
+                          {item.description && (
+                            <div className="text-[11px] text-gray-500 leading-tight">
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="relative group">
               <Link 
-                href="/Feature"
-                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'feature' ? 'text-blue-700' : 'text-gray-700'}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleDropdownToggle('feature', e);
-                }}
+                href="/industries"
+                className="flex items-center text-[14px] font-medium text-[09090B] hover:text-[#166cf7] transition-colors duration-150 group"
               >
-                Feature
-                <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200 
-                  ${openDropdown === 'feature' ? 'rotate-180 text-blue-700' : ''}`} 
+                Industries
+                <svg className="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-              <Dropdown items={dropdownData.feature} isOpen={openDropdown === 'feature'} />
+              <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                <div className="bg-white rounded-lg shadow-lg py-3 border border-gray-100">
+                  {dropdownData.feature.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.href}
+                      className="flex items-start px-4 py-2 hover:bg-blue-50/40 group/item transition-colors duration-150"
+                    >
+                      <div className="flex items-start gap-3">
+                        {item.icon && (
+                          <div className="mt-0.5 text-gray-500 group-hover/item:text-[#166cf7] transition-colors">
+                            {item.icon}
+                          </div>
+                        )}
+                        <div>
+                          <div className="text-[12px] font-medium text-[09090B] group-hover/item:text-[#166cf7] mb-0.5">
+                            {item.title}
+                          </div>
+                          {item.description && (
+                            <div className="text-[11px] text-gray-500 leading-tight">
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div> <Link href="/pricing" className="text-[17px] text-gray-700 hover:text-blue-700 transition-colors duration-150">
+            <Link href="/pricing" className="text-[14px] font-medium text-[09090B] hover:text-[#166cf7] transition-colors duration-150">
               Pricing
-            </Link></div>
+            </Link>
 
             <div className="relative group">
               <button 
-                className={`flex items-center hover:text-blue-700 transition-colors duration-150 text-[17px]
-                  ${openDropdown === 'resources' ? 'text-blue-700' : 'text-gray-700'}`}
-                onClick={(e) => handleDropdownToggle('resources', e)}
+                className="flex items-center text-[14px] font-medium text-[09090B] hover:text-[#166cf7] transition-colors duration-150 group"
               >
                 Resources
-                <svg className={`ml-1 w-4 h-4 transform transition-transform duration-200
-                  ${openDropdown === 'resources' ? 'rotate-180 text-blue-700' : ''}`} 
+                <svg className="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:rotate-180" 
                   fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <Dropdown items={dropdownData.resources} isOpen={openDropdown === 'resources'} />
+              <div className="absolute left-0 mt-2 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                <div className="bg-white rounded-lg shadow-lg py-3 border border-gray-100">
+                  {dropdownData.resources.map((item, index) => (
+                    <a
+                      key={index}
+                      href={item.href}
+                      className="flex items-start px-4 py-2 hover:bg-blue-50/40 group/item transition-colors duration-150"
+                    >
+                      <div className="flex items-start gap-3">
+                        {item.icon && (
+                          <div className="mt-0.5 text-gray-500 group-hover/item:text-[#166cf7] transition-colors">
+                            {item.icon}
+                          </div>
+                        )}
+                        <div>
+                          <div className="text-[12px] font-medium text-[09090B] group-hover/item:text-[#166cf7] mb-0.5">
+                            {item.title}
+                          </div>
+                          {item.description && (
+                            <div className="text-[11px] text-gray-500 leading-tight">
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-4">
-          
             <Link 
               href="/login" 
-              className="text-[17px] bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors duration-150 flex items-center gap-2"
+              className="flex items-center gap-2 text-[14px] font-medium text-gray-600 hover:text-[#166cf7] transition-colors duration-150 group"
             >
-              <FaSignInAlt className="w-4 h-4" />
-              Log in
+              <FaSignInAlt className="w-4 h-4 transition-colors duration-150" />
+              Sign in
             </Link>
             <Link 
               href="/signup" 
-              className="text-[17px] bg-[#166cf7] text-white px-4 py-2 rounded-lg hover:bg-[#005a63] transition-colors duration-150 flex items-center gap-2"
+              className="flex items-center gap-2 text-[14px] font-medium px-4 py-2 rounded-lg bg-gray-900 text-white hover:bg-blue-600 transition-colors duration-150 group"
             >
-              <FaUserPlus className="w-4 h-4" />
-              Sign up
+              Try LookSense
+              {/* <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" /> */}
             </Link>
-          </div></div>
+          </div>
 
           {/* Mobile menu button */}
           <button
             ref={buttonRef}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-gray-900"
+            className="md:hidden p-2 rounded-md text-gray-600 hover:text-[09090B]"
             onClick={handleMenuToggle}
           >
-            <span className="sr-only">{isMobileMenuOpen ? 'Close menu' : 'Open menu'}</span>
             {isMobileMenuOpen ? (
-              // Close (X) icon
-              <svg 
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              // Hamburger icon
-              <svg 
-                className="h-6 w-6" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 6h16M4 12h16M4 18h16" 
-                />
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - styling updated to match theme */}
       {isMobileMenuOpen && (
         <div 
           ref={mobileMenuRef}
-          className="md:hidden fixed inset-0 top-[64px] bg-white z-40"
-          onClick={e => e.stopPropagation()}
+          className="md:hidden fixed inset-0 top-[64px] bg-white/95 backdrop-blur-md z-40"
         >
-          <div className="h-full overflow-y-auto pb-20">
-            <div className="px-4 pt-2 pb-3 space-y-3">
+          <div className="h-full overflow-y-auto pb-20 px-4 pt-2">
+            <div className="space-y-1">
               <Link 
                 href="/product" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
+                className="block px-3 py-2 text-[14px] font-medium text-gray-600 hover:text-[#166cf7] hover:bg-blue-50/50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Product
               </Link>
               <Link 
-                href="/pricing" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
+                href="/industries" 
+                className="block px-3 py-2 text-[14px] font-medium text-gray-600 hover:text-[#166cf7] hover:bg-blue-50/50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Industries
               </Link>
               <Link 
                 href="/resources" 
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-[#166cf7] hover:bg-gray-50 rounded-lg"
+                className="block px-3 py-2 text-[12px] font-medium text-gray-600 hover:text-[#166cf7] hover:bg-blue-50/50 rounded-lg"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Resources
               </Link>
             </div>
 
-            <div className="px-4 py-3 border-t border-gray-200">
-              <div className="space-y-3">
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="space-y-4">
                 <Link 
                   href="/login" 
-                  className="flex items-center gap-2 w-full px-4 py-2 text-center text-[#166cf7] hover:bg-gray-50 rounded-lg"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2 text-[14px] font-medium text-gray-600 hover:text-[#166cf7] hover:bg-blue-50/50 rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <FaSignInAlt className="w-4 h-4" />
-                  Log in
+                  Sign in
                 </Link>
                 <Link 
                   href="/signup" 
-                  className="flex items-center gap-2 justify-center w-full px-4 py-2 text-center text-white bg-[#166cf7] hover:bg-[#005a63] rounded-lg"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-2 text-[14px] font-medium text-white bg-gray-900 hover:bg-blue-600 rounded-lg"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <FaUserPlus className="w-4 h-4" />
-                  Sign up
+                  Try LookSense
+                  <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform duration-150" />
                 </Link>
               </div>
             </div>

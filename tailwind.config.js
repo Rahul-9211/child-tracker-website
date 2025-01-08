@@ -25,39 +25,29 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' }
         },
-        fadeIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' }
+        pulse: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 }
         },
-        slideIn: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(0)' }
-        },
-        blink: {
-          'from, to': { opacity: '1' },
-          '50%': { opacity: '0' }
-        },
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        marquee2: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0%)' },
+        ping: {
+          '75%, 100%': {
+            transform: 'scale(2)',
+            opacity: 0,
+          },
         },
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
-        fadeIn: 'fadeIn 0.2s ease-out forwards',
-        slideIn: 'slideIn 0.3s ease-out forwards',
-        blink: 'blink 0.75s step-end infinite',
-        marquee: 'marquee 40s linear infinite',
-        marquee2: 'marquee2 40s linear infinite',
+        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        ping: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       fontFamily: {
-        sans: ['"Inter Variable"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-        clarendon: ['"Clarendon Graphic"', 'Georgia', 'sans-serif'],
-        rebond: ['"ES Rebond Grotesque"', 'sans-serif'],
+        sans: ['var(--framer-font-family)'],
+        display: ['var(--framer-font-family-bold)'],
+        jakarta: ['var(--framer-font-family)'],
+        'jakarta-bold': ['var(--framer-font-family-bold)'],
+        'jakarta-italic': ['var(--framer-font-family-italic)'],
+        'jakarta-bold-italic': ['var(--framer-font-family-bold-italic)'],
       },
     }
   },
