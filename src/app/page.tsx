@@ -11,13 +11,26 @@ import DeviceCompatibility from '@/components/ProactiveSecurity/DeviceCompatibil
 import PressHighlights from '@/components/ProactiveSecurity/PressHighlights';
 import FAQ from '@/components/ProactiveSecurity/FAQ';
 import Footer from '@/components/ProactiveSecurity/Footer';
+import FeatureSection from '@/components/ProactiveSecurity/FeatureSection';
+import PricingSection from '@/components/ProactiveSecurity/PricingSection';
+import WhyChooseLookSense from '@/components/ProactiveSecurity/WhyChooseLookSense';
+import ScreenTimeControl from '@/components/ProactiveSecurity/ScreenTimeControl';
+import ContentFilter from '@/components/ProactiveSecurity/ContentFilter';
+import SetupSteps from '@/components/ProactiveSecurity/SetupSteps';
+import WhyBestApp from '@/components/ProactiveSecurity/WhyBestApp';
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <main>
+        {/* <WhyBestApp/>
+        <WhyChooseLookSense/>
+  <ScreenTimeControl />
+  <ContentFilter />
+  <SetupSteps/> */}
         <Hero />
+
         <BrandMarquee />
 
         <Stats />
@@ -27,6 +40,8 @@ export default function Home() {
         <DeviceCompatibility />
         <PressHighlights />
         <FAQ />
+        <FeatureSection/>
+        <PricingSection/>
         
         {/* <UserFlow />
         <Features />
